@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
+import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 // import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
-import { Features } from "./components/features";
 import { About } from "./components/about";
 import { Services } from "./components/services";
 import { Gallery } from "./components/gallery";
-import { Testimonials } from "./components/testimonials";
-import { Team } from "./components/Team";
-import {BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Contact } from "./components/contact";
-import { Posts } from "./pages/posts.jsx";
+import { Posts } from "./pages/posts";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
@@ -26,10 +24,10 @@ const App = () => {
     setLandingPageData(JsonData);
   }, []);
 
+
   return (
     <div>
     <Router>
-        <div>
           <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
             <div className='container'>
               <div className='navbar-header'>
@@ -46,9 +44,9 @@ const App = () => {
                   <span className='icon-bar'></span>{' '}
                 </button>
                 <Link to="/">
-                <a className='navbar-brand page-scroll' href='#page-top'>
+                <span className='navbar-brand page-scroll' href='#page-top'>
                   Ashley Travel 🏔 🏖 🏝
-                </a>{' '}
+                </span>{' '}
                 </Link>
               </div>
 
@@ -56,23 +54,23 @@ const App = () => {
                 <ul className='nav navbar-nav navbar-right'>
                 
                   <li>
-                     <a href='#about' className='page-scroll'>
+                  <Link to="/#about">  
                       About
-                    </a>  
+                    </Link>
                   </li>
 
                   <li>
-                    <a href='#services' className='page-scroll'>
+                  <Link to="/#services"> 
                       Portfolio
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href='#portfolio' className='page-scroll'>
+                    <Link to="/#portfolio">
                       Gallery
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/posts">Posts</Link>
+                    <Link to="/posts" replace>Posts</Link>
                   </li> 
                   <li>
                     <a href='#contact' className='page-scroll'>
@@ -83,7 +81,7 @@ const App = () => {
               </div>
             </div>
           </nav>
-        </div>
+  
        <Switch>
         <Route exact path="/">
           <Header data={landingPageData.Header} />
@@ -92,9 +90,10 @@ const App = () => {
           <Gallery />
           <Contact data={landingPageData.Contact} />
         </Route>
-
+        
         <Route exact path="/posts">
             <Posts/>
+            <Contact data={landingPageData.Contact} />
         </Route>
         </Switch>
      

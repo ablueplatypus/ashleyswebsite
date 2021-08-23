@@ -1,4 +1,3 @@
-
 import  Editor from "../components/editor";
 import React, {useState} from "react";
 
@@ -12,7 +11,7 @@ export const Posts = (props) => {
 
      const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('hi from form')
+        console.log('hi from form' , e)
     }
 
    const handleChange = (e) => {
@@ -25,15 +24,27 @@ export const Posts = (props) => {
 
 
     return (
-      <div id='post' className='text-center'>
+      <div id='post'>
         <div className="container">
-          <div className='col-md-8 col-md-offset-2 intro-text'>
+          <div className="row">
+          <div className='col-xs-12 col-md-6'>
             <h2>Blog Posts</h2>
           </div>
+          <p>Start Writing your Posts here!</p>
           <div className="about-text">
-            <p>Start Writing your Posts here!</p>
+                <form  className="form-horizontal" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label className="form-control col-sm-2">
+                        Title:
+                        <input type="text" name="title" onChange={handleChange} />
+                        </label>
+                    </div>
+                </form>
+            <div className="RichEditor-root">
             <Editor />
-            <div>
+            </div>
+            <button className="btn btn-dark" type="submit" value="Submit">Submit</button>
+            {/*<div>
                 <form onSubmit={handleSubmit}>
                     <label>
                     Title:
@@ -45,6 +56,7 @@ export const Posts = (props) => {
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
+            </div> */}
             </div>
           </div>
         </div>

@@ -16,3 +16,27 @@
     width: 110%;
   }
 }
+
+
+.RichEditor-root {
+  background: rgb(232, 245, 247);
+  border: 1px solid rgb(145, 144, 144);
+  font-family: Georgia,serif;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.btn-dark {
+  background:rgb(36, 35, 35);
+  color: white;
+  margin: 3px;
+}
+
+.btn-dark:hover {
+  color:white;
+  background-color: rgb(112, 111, 111);
+}
+
+div.DraftEditor-root {
+  background-color: rgb(232, 245, 247);
+}
