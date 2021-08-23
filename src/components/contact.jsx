@@ -141,6 +141,11 @@ export const Contact = (props) => {
                       <i className='fa fa-youtube'></i>
                     </a>
                   </li>
+                  <li>
+                    <a href="#page-top">
+                      <i className='fa fa-arrow-up'></i>
+                    </a>
+                  </li>                 
                 </ul>
               </div>
             </div>
@@ -150,9 +155,9 @@ export const Contact = (props) => {
       <div id='footer'>
         <div className='container text-center'>
           <p>
-            &copy; 2020 Issaaf Kattan React Land Page Template. Design by{' '}
-            <a href='http://www.templatewire.com' rel='nofollow'>
-              TemplateWire
+            &copy; Site is managed and maintained by{' '}
+            <a href='http://mattdoering.tech/' rel='nofollow'>
+             Matt Doering
             </a>
           </p>
         </div>

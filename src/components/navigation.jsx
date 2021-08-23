@@ -1,5 +1,8 @@
+import {BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 export const Navigation = (props) => {
   return (
+   { /* <Router>
     <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
       <div className='container'>
         <div className='navbar-header'>
@@ -16,28 +19,26 @@ export const Navigation = (props) => {
             <span className='icon-bar'></span>{' '}
           </button>
           <a className='navbar-brand page-scroll' href='#page-top'>
-            React Landing Page
+            Ashley Travel 🏔 🏖 🏝
           </a>{' '}
         </div>
 
-        <div
-          className='collapse navbar-collapse'
-          id='bs-example-navbar-collapse-1'
-        >
+        <div className='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
           <ul className='nav navbar-nav navbar-right'>
-            <li>
+            {/* <li>
               <a href='#features' className='page-scroll'>
                 Features
               </a>
-            </li>
+            </li> 
             <li>
               <a href='#about' className='page-scroll'>
                 About
-              </a>
+              </a> 
             </li>
+
             <li>
               <a href='#services' className='page-scroll'>
-                Services
+                Portfolio
               </a>
             </li>
             <li>
@@ -46,15 +47,16 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href='#testimonials' className='page-scroll'>
-                Testimonials
-              </a>
+              {/* <a href='#posts' className='page-scroll'>
+                Posts
+              </a> 
+              <Link to="/posts">Posts</Link>
             </li>
-            <li>
+            {/* <li>
               <a href='#team' className='page-scroll'>
                 Team
               </a>
-            </li>
+            </li> 
             <li>
               <a href='#contact' className='page-scroll'>
                 Contact
@@ -64,5 +66,9 @@ export const Navigation = (props) => {
         </div>
       </div>
     </nav>
+
+    </Router> 
+
+          */}
   )
 }
